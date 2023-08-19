@@ -8,6 +8,7 @@ connectMongoDB();
 const app = Express();
 const PORT = 3000;
 
+app.disable("x-powered-by");
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 
