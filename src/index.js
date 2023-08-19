@@ -11,8 +11,8 @@ const PORT = 3000;
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 
-app.use('/', authRouter);
-app.use('/user', userRouter);
+app.use('api/', authRouter);
+app.use('api/user', userRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running on port http://localhost:${PORT}`);
