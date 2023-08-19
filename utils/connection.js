@@ -1,8 +1,7 @@
 import { set, connect } from 'mongoose';
+import { MONGO_CONNECTION_LINK } from '../config/constants.js';
 
 export async function connectMongoDB() {
-    const { MONGO_CONNECTION_LINK } = process.env;
-
     set('strictQuery', false); // Para que no de error al hacer una consulta con un campo que no existe en la base de datos
 
     connect(MONGO_CONNECTION_LINK)

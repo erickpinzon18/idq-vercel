@@ -28,6 +28,7 @@ export async function login(req, res) {
 }
 
 export async function getUser(req, res) {
+    console.log('aaaa');
     try {
         const { idq: idqOrigin, password } = req.body;
         const { idq: idqDestiny } = req.params;
