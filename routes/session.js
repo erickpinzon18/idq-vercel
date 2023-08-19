@@ -5,25 +5,25 @@ import { loginFetch, registerFetch } from "../controllers/apiRequest.js";
 export const router = Router();
 
 // login
-router.post("/login", (req, res) => {
+router.post("/login", async (req, res) => {
 	// TODO: fetch to API to login
 	try {
 		const { user, password } = req.body;
-		const response = loginFetch(user, password);
-		res.json(response);
+		const response = await loginFetch(user, password);
+        res.json(response);
 	} catch (error) {
 		res.json({
-			error: error,
+			errorPost: error,
 		});
 	}
 });
 
 // register
-router.post("/register", (req, res) => {
+router.post("/register", async (req, res) => {
 	// TODO: fetch to API to register
 	try {
 		const { user, password, name, email, img } = req.body;
-		const response = registerFetch(user, password, name, email, img);
+		const response = await registerFetch(user, password, name, email, img);
 		res.json(response);
 	} catch (error) {
 		res.json({

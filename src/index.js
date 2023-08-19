@@ -5,10 +5,14 @@ import { router as session } from '../routes/session.js'
 const app = Express();
 const PORT = 3000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on port http://localhost:${PORT}`);
-});
+app.disable('x-powered-by');
+app.use(Express.json());
+app.use(Express.urlencoded({ extended: true }));
 
 app.use('/pages', pages); 
 app.use('/session', session);
 app.set('view engine', 'ejs');
+
+app.listen(PORT, () => {
+  console.log(`Server running on port http://localhost:${PORT}`);
+});
