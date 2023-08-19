@@ -1,5 +1,4 @@
 import { Schema, model } from "mongoose";
-
 const { FILE_SERVER } = process.env;
 
 export const userModel = model('users', new Schema({

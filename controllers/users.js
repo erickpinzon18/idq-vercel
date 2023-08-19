@@ -1,7 +1,6 @@
 import crypto from 'node:crypto';
 import { userModel } from "../models/user.js";
 
-
 export async function login(req, res) {
     try {
         const { user, password } = req.body;

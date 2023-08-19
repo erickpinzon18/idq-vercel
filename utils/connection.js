@@ -1,6 +1,5 @@
 import { set, connect } from 'mongoose';
 
-
 export async function connectMongoDB() {
     const { MONGO_CONNECTION_LINK } = process.env;
 
