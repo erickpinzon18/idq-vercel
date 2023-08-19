@@ -1,5 +1,6 @@
-import { FILE_SERVER } from "../config/config.js";
 import { Schema, model } from "mongoose";
+
+const { FILE_SERVER } = process.env;
 
 export const userModel = model('users', new Schema({
     idq: {

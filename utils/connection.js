@@ -1,13 +1,12 @@
-import { MONGO_CONNECTION_LINK } from '../config/config.js';
 import { set, connect } from 'mongoose';
 
 
 export async function connectMongoDB() {
-    const linkMongoDB = MONGO_CONNECTION_LINK;
+    const { MONGO_CONNECTION_LINK } = process.env;
 
     set('strictQuery', false); // Para que no de error al hacer una consulta con un campo que no existe en la base de datos
 
-    connect(linkMongoDB)
+    connect(MONGO_CONNECTION_LINK)
     .then(() => {
         console.log('Conexion correcta a mongoDB');
     })
