@@ -1,9 +1,7 @@
 import { Router } from 'express';
-import { getUser, newUser, newContact, newDoc } from '../controllers/users.js';
+import { getUser } from '../controllers/users.js';
 
-export const router = Router();
+const router = Router();
 
-router.post('/getUser/:idq', getUser);
-router.post('/newUser', newUser);
-router.post('/newContact', newContact);
-router.post('/newDoc', newDoc);
+router.get('/:idq', getUser());
+router.get('/:idq', getUser());

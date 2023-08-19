@@ -1,19 +1,14 @@
 import Express from "express";
-import { connectMongoDB } from "../utils/connection.js";
-import { router as userRouter } from "../routes/user.js";
-import { router as authRouter } from "../routes/auth.js";
-
-connectMongoDB();
-
+import { router as pages } from '../routes/pages.js'
+import { router as session } from '../routes/session.js'
+ 
 const app = Express();
 const PORT = 3000;
-
-app.use(Express.json());
-app.use(Express.urlencoded({ extended: true }));
-
-app.use('/', authRouter);
-app.use('/user', userRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running on port http://localhost:${PORT}`);
 });
+
+app.use('/pages', pages); 
+app.use('/session', session);
+app.set('view engine', 'ejs');
