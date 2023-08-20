@@ -55,7 +55,7 @@ La aplicación utiliza una API REST para gestionar los documentos y la autentica
 
 ## Documentación
 
-- [Documentación Técnica](https://docs.google.com/document/d/1QxlpP-ROawh3xvM8S_HzHmWLFMLtmj_siKDzXbN0xaQ/edit?usp=sharing)
+- [Documentación](https://docs.google.com/document/d/1QxlpP-ROawh3xvM8S_HzHmWLFMLtmj_siKDzXbN0xaQ/edit?usp=sharing)
 
 ## Presentación
 
@@ -64,7 +64,7 @@ La aplicación utiliza una API REST para gestionar los documentos y la autentica
 ## Proyectos Relacionados
 
 - [Página Web Consumiendo la API](https://github.com/SrCosmicCat/idq-use-api)
-<!-- [Aplicación Móvil Consumiendo la API](link_al_repositorio_de_la_app_movil) -->
+- [Aplicación Móvil Consumiendo la API](https://github.com/SrCosmicCat/)
 
 ## Contribución
 
