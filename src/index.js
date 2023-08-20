@@ -3,6 +3,11 @@ import { connectMongoDB } from "../utils/connection.js";
 import { router as userRouter } from "../routes/user.js";
 import { router as authRouter } from "../routes/auth.js";
 import { PORT } from "../config/constants.js";
+import session from "express-session";
+import cookieParser from "cookie-parser";
+import { router as pages } from "../routes/pages.js";
+import { router as sessions } from "../routes/session.js";
+import { router as documents } from "../routes/documents.js";
 
 connectMongoDB();
 
