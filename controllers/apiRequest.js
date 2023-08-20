@@ -1,6 +1,7 @@
 // JS to fetch data from API
 import axios from "axios";
 const server = "https://c229-200-188-14-2.ngrok-free.app/api/"; // https://idq-vercel.vercel.app/
+// const server = "http://localhost:3000/api/"; // https://idq-vercel.vercel.app/
 // Fetch data from API
 /**
  * Function to fetch login data from API

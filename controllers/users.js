@@ -4,7 +4,7 @@ import { handleSingleUploadFile } from '../middlewares/uploadFile.js';
 export async function login(req, res) {
     try {
         const { user, password } = req.body;
-
+        
         const userBD = await userModel.findOne({ user, password });
 
         if (!userBD) {
