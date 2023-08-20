@@ -1,5 +1,6 @@
 import crypto from 'node:crypto';
 import { userModel } from "../models/user.js";
+import { handleSingleUploadFile } from '../middlewares/uploadFile.js';
 
 export async function login(req, res) {
     try {
@@ -28,13 +29,13 @@ export async function login(req, res) {
 }
 
 export async function getUser(req, res) {
-    console.log('aaaa');
     try {
         const { idq: idqOrigin, password } = req.body;
         const { idq: idqDestiny } = req.params;
 
         // TODO: hacer validaciones para traer los datos sensibles y no sensibles
         const userOrigin = await userModel.findOne({ idq: idqOrigin, password });
+        console.log(userOrigin);
         if (!userOrigin) {
             return res.status(400).json({
                 error: 'Usuario no válido'
@@ -60,25 +61,61 @@ export async function getUser(req, res) {
     }
 }
 
+export async function getAllUsers(req, res) {
+    try {
+        const { idq, password } = req.body;
+
+        const userBD = await userModel.findOne({ idq, password, type: 'admin' });
+        if (!userBD) {
+            return res.status(400).json({
+                error: 'Usuario no válido'
+            });
+        }
+
+        // TODO: hacer validaciones para traer los datos sensibles y no sensibles
+        const users = await userModel.find({});
+
+        return res.json({
+            data: users
+        });
+    } catch (error) {
+        console.log(error);
+        return res.status(400).json({
+            error: 'Error al obtener usuario'
+        });
+    }
+}
+
 export async function newUser(req, res) {
     try {
+          
+        // TODO: Hacer aquí las validaciones para insertar en BD
+
+        let uploadRes;
+        try {
+            uploadRes = await handleSingleUploadFile(req, res);
+        }
+        catch(e) {
+            return res.status(422).json({ 
+                error: e.message 
+            });
+        }
+
+        const uploadedFile = uploadRes.file;
         const {
             user,
             password,
             name,
-            email,
-            img
-        } = req.body;
-    
-        // TODO: Hacer aquí las validaciones para insertar en BD
-    
+            email
+        } = uploadRes.body;
+
         const userBD = await userModel.create({ 
             user,
             password,
             idq: crypto.randomUUID(),
             name,
             email,
-            img: 'test',
+            img: uploadRes.file.filename,
             trustedContacts: [],
             type: 'normal',
             docs: []
@@ -129,7 +166,23 @@ export async function newContact(req, res) {
 
 export async function newDoc(req, res) {
     try {
-        const { idq, password } = req.body;
+        // TODO: Hacer aquí las validaciones para no guardar el archivo si el usuario no es válido
+        let uploadRes;
+        try {
+            uploadRes = await handleSingleUploadFile(req, res);
+        }
+        catch(e) {
+            return res.status(422).json({ 
+                error: e.message 
+            });
+        }
+        
+        const uploadedFile = uploadRes.file;
+        const {
+            idq,
+            password,
+            docType
+        } = uploadRes.body;
 
         const userBD = await userModel.findOne({ idq, password });
         if (!userBD) {
@@ -138,10 +191,10 @@ export async function newDoc(req, res) {
             });
         }
 
-        const { docType, doc } = req.body;
+        
         const newDoc = {
             docType,
-            doc
+            file: uploadedFile.filename
         };
 
         userBD.docs.push(newDoc);
