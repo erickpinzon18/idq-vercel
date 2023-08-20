@@ -61,6 +61,12 @@ La aplicación utiliza una API REST para gestionar los documentos y la autentica
 
 - [Presentación en Google Slides](https://docs.google.com/presentation/d/1flYl4w_tBPO0VpfHNz3eY5SE5Ozynt_f/edit?usp=sharing&ouid=105847790403881410959&rtpof=true&sd=true)
 
+## Diseños en Figma
+
+- [FigJam](https://www.figma.com/file/V6lTmBop7IgTd6zFFz4Z1a/IDQ?type=whiteboard&node-id=1044%3A1512&t=uPjko7S6xwqWNf5F-1)
+- [FIigma](https://www.figma.com/file/SqlmpAK165g2mmA3dYDIcb/IDQ-Mockups?type=design&node-id=0-1&mode=design&t=7QeboiMBmrYvNJgi-0)
+- **Nota:** Los diseños en Figma contienen todos los diagramas y detalles visuales del proyecto.
+
 ## Proyectos Relacionados
 
 - [Página Web Consumiendo la API](https://github.com/SrCosmicCat/idq-use-api)
