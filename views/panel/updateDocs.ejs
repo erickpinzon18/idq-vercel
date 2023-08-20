@@ -3,7 +3,7 @@
 	<head>
 		<!-- Head with links and settings -->
 		<%- include('../templates/head')%>
-		<title>IDQ - Actualizar Documentos</title>
+		<title>IDQ - Registrar Documentos</title>
 	</head>
 	<body>
 		<%- include('../templates/navbar')%>
@@ -12,7 +12,7 @@
 			<h1>Registrar Nuevo Documento</h1>
 			<!-- Form to Register new Doc -->
 			<form
-				action="../documents/register"
+				action="../../documents/register"
 				method="POST"
 				enctype="application/x-www-form-urlencoded"
 			>
@@ -34,12 +34,14 @@
 					type="file"
 					name="file"
 					placeholder="Archivo a registrar"
+                    accept="image/png, image/jpeg, application/pdf"
 				/>
+                <input type="password" name="password" placeholder="Password">
 				<button type="submit">Guardar</button>
 			</form>
 
-			<h1 class="mt-5">Actualizar Documentos</h1>
-			<!-- Show a list with all documwents -->
+			<!-- <h1 class="mt-5">Actualizar Documentos</h1>
+			
 			<table class="table">
 				<thead>
 					<tr>
@@ -75,7 +77,7 @@
 						</td>
 					</tr>
 				</tbody>
-			</table>
+			</table> -->
 		</div>
 
 		<!-- Footer -->

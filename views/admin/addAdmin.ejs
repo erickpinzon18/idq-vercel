@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Head with links and settings -->
+		<%- include('../templates/head')%>
+		<title>IDQ - Registrar Servidor Publico</title>
+	</head>
+	<body>
+		<%- include('../templates/navbar')%>
+		<div class="container mt-3">
+			<h1>Agregar Sevidor Publico | Usuario Certificado</h1>
+			<!-- Form to login -->
+			<form
+				action="../session/register"
+				method="POST"
+				enctype="multipart/form-data"
+			>
+				<input type="text" name="name" placeholder="Nombre completo" />
+				<input type="text" name="user" placeholder="Username" />
+				<input
+					type="email"
+					name="email"
+					placeholder="Correo Electronico"
+				/>
+				<input type="password" name="password" placeholder="Password" />
+				<input type="file" name="img" placeholder="Imagen de Usuario" />
+                <select
+					class="form-select"
+					aria-label="Selecciona un tipo de archivo"
+					name="type"
+				>
+					<option selected>Selecciona un tipo de usuario</option>
+					<option value="admin">Administrador</option>
+					<option value="authority">Autoridad</option>
+					<option value="normal">Ciudadano</option>
+				</select>
+				<button type="submit">Enviar</button>
+			</form>
+		</div>
+
+		<!-- Footer -->
+		<%- include('../templates/footer')%>
+	</body>
+</html>
