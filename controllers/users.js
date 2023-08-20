@@ -1,4 +1,3 @@
-import crypto from 'node:crypto';
 import { userModel } from "../models/user.js";
 import { handleSingleUploadFile } from '../middlewares/uploadFile.js';
 

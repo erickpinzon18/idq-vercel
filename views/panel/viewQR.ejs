@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Head with links and settings -->
+		<%- include('../templates/head')%>
+		<title>IDQ - Ver QR</title>
+	</head>
+	<body>
+		<%- include('../templates/navbar')%>
+
+		<div class="container mt-3">
+			<h1>Ver QR</h1>
+            <h2><%= name %></h2>
+			<img src="<%= url %>" width="30%" />
+		</div>
+
+		<!-- Footer -->
+		<%- include('../templates/footer')%>
+	</body>
+</html>

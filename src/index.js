@@ -12,13 +12,25 @@ app.disable("x-powered-by");
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 
-app.use('/api/', authRouter);
-app.use('/api/user', userRouter);
 
 app.use((req, res) => {
-  res.json('404');
+    res.json('404');
 });
+app.use(session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge: 3600000 },
+})
+);
+app.use(cookieParser());
+app.use('/api/', authRouter);
+app.use('/api/user', userRouter);
+app.use("/pages", pages);
+app.use("/session", sessions);
+app.use("/documents", documents);
+app.set("view engine", "ejs");
 
 app.listen(PORT, () => {
-  console.log(`Server running on port http://localhost:${PORT}`);
+	console.log(`Server running on port http://localhost:${PORT}`);
 });

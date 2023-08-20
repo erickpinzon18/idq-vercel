@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Head with links and settings -->
+		<%- include('templates/head')%>
+		<title>IDQ - Iniciar Sesion</title>
+	</head>
+	<body>
+		<div class="container mt-3">
+            <h1>Iniciar Sesion</h1>
+			<!-- Form to login -->
+			<form
+				action="../session/login"
+				method="POST"
+				enctype="application/x-www-form-urlencoded"
+			>
+				<input type="text" name="user" placeholder="Username" />
+				<input type="password" name="password" placeholder="Password" />
+				<button type="submit">Enviar</button>
+			</form>
+            <h3 class="text-danger"><%= error !== undefined ? error : '' %></h3>
+			<a href="/pages/register">Registrar nuevo usuario</a>
+		</div>
+		<!-- Footer -->
+		<%- include('templates/footer')%>
+	</body>
+</html>

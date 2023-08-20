@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Head with links and settings -->
+		<%- include('../templates/head')%>
+		<title>IDQ - Registrar Documentos</title>
+	</head>
+	<body>
+		<%- include('../templates/navbar')%>
+
+		<div class="container mt-3">
+			<h1>Registrar Nuevo Documento</h1>
+			<!-- Form to Register new Doc -->
+			<form
+				action="../../documents/register"
+				method="POST"
+				enctype="application/x-www-form-urlencoded"
+			>
+				<select
+					class="form-select"
+					aria-label="Selecciona un tipo de archivo"
+					name="docType"
+				>
+					<option selected>Selecciona un tipo de archivo</option>
+					<option value="INE">INE</option>
+					<option value="RFC">RFC</option>
+					<option value="Licencia">Licencia</option>
+					<option value="CURP">CURP</option>
+					<option value="Pasaporte">Pasaporte</option>
+					<option value="Domicilio">Domicilio</option>
+					<option value="eFirma">eFirma</option>
+				</select>
+				<input
+					type="file"
+					name="file"
+					placeholder="Archivo a registrar"
+                    accept="image/png, image/jpeg, application/pdf"
+				/>
+                <input type="password" name="password" placeholder="Password">
+				<button type="submit">Guardar</button>
+			</form>
+
+			<!-- <h1 class="mt-5">Actualizar Documentos</h1>
+			
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Tipo</th>
+						<th scope="col">Actualizar</th>
+						<th scope="col">Eliminar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>INE</td>
+						<td><input type="file" name="file" /></td>
+						<td>
+							<a
+								href="./documents/remove/INE/idq"
+								class="text-danger"
+								>Eliminar</a
+							>
+						</td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>CURP</td>
+						<td><input type="file" name="file" /></td>
+						<td>
+							<a
+								href="./documents/remove/INE/idq"
+								class="text-danger"
+								>Eliminar</a
+							>
+						</td>
+					</tr>
+				</tbody>
+			</table> -->
+		</div>
+
+		<!-- Footer -->
+		<%- include('../templates/footer')%>
+	</body>
+</html>

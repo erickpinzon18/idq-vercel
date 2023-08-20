@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Head with links and settings -->
+		<%- include('templates/head')%>
+		<title>IDQ - Registrar Usuario</title>
+	</head>
+	<body>
+		<div class="container mt-3">
+			<h1>Registrar nuevo usuario</h1>
+			<!-- Form to login -->
+			<form
+				action="../session/register"
+				method="POST"
+				enctype="multipart/form-data"
+			>
+				<input type="text" name="name" placeholder="Nombre completo" />
+				<input type="text" name="user" placeholder="Username" />
+				<input
+					type="email"
+					name="email"
+					placeholder="Correo Electronico"
+				/>
+				<input type="password" name="password" placeholder="Password" />
+				<input type="file" name="img" placeholder="Imagen de Usuario" />
+				<button type="submit">Enviar</button>
+			</form>
+            <a href="/pages/login">Iniciar Sesion</a>
+		</div>
+		<!-- Footer -->
+		<%- include('templates/footer')%>
+	</body>
+</html>

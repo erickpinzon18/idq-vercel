@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Head with links and settings -->
+		<%- include('../templates/head')%>
+		<title>IDQ - Ver Documentos</title>
+	</head>
+	<body>
+		<%- include('../templates/navbar')%>
+
+		<div class="container mt-3">
+			<h1>Ver Documentos</h1>
+			<!-- Show a list with all documwents -->
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Tipo</th>
+						<th scope="col">Ver</th>
+						<th scope="col">Eliminar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>INE</td>
+						<td>
+							<a
+								href="https://idq-vercel.vercel.app/resources/idq/INE.ext"
+							>
+								Link
+							</a>
+						</td>
+						<td>
+							<a
+								href="./documents/remove/INE/idq"
+								class="text-danger"
+								>Eliminar</a
+							>
+						</td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>CURP</td>
+						<td>
+							<a
+								href="https://idq-vercel.vercel.app/resources/idq/INE.ext"
+							>
+								Link
+							</a>
+						</td>
+						<td>
+							<a
+								href="./documents/remove/INE/idq"
+								class="text-danger"
+								>Eliminar</a
+							>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- Footer -->
+		<%- include('../templates/footer')%>
+	</body>
+</html>
